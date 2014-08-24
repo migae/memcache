@@ -1,5 +1,5 @@
 (defproject migae/memcache "0.1.0-SNAPSHOT"
-  :description "migae - MobileInk Google App Engine sdk for Clojure."
+  :description "migae memcache - Clojure API for Google App Engine memcache services."
   :url "https://github.com/migae/memcache"
   :min-lein-version "2.0.0"
   :aot [#".*"]
