@@ -1,4 +1,4 @@
-(ns org.mobileink.migae.memcache
+(ns migae.memcache
   (:refer-clojure :exclude (contains? get))
   (:import [com.google.appengine.api.memcache
             Expiration

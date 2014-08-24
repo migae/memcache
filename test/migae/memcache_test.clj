@@ -1,4 +1,4 @@
-(ns org.mobileink.migae.memcache-test
+(ns migae.memcache-test
   (:refer-clojure :exclude (contains? get))
   (:import [com.google.appengine.tools.development.testing
             LocalServiceTestHelper
@@ -6,7 +6,7 @@
             LocalMemcacheServiceTestConfig]
            [google.appengine.api.memcache.InvalidValueException])
   (:require [clojure.test :refer :all]
-            [org.mobileink.migae.memcache :as cache]
+            [migae.memcache :as cache]
             [clojure.tools.logging :as log :only [trace debug info]]))
 
 (defn- mc-fixture
