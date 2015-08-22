@@ -1,4 +1,4 @@
-(defproject org.mobileink/migae.memcache "0.2.0-SNAPSHOT"
+(defproject org.mobileink/migae.memcache "0.1.0-SNAPSHOT"
   :description "migae memcache - Clojure API for Google App Engine memcache services."
   :url "https://github.com/migae/memcache"
   :min-lein-version "2.0.0"
@@ -18,9 +18,5 @@
                  ;;                              com.sun.jdmk/jmxtools
                  ;;                              com.sun.jmx/jmxri]]
                  ;; [org.slf4j/slf4j-log4j12 "1.6.6"]
-                 ;; [org.clojure/tools.logging "0.2.3"]
+                 ;; [org.clojure/tools.logging "0.3.1"]
                  ])
-  ;; :profiles {:test {:dependencies [[com.google.appengine/appengine-api-stubs "1.8.4"]
-  ;;                                  [com.google.appengine/appengine-testing "1.8.4"]
-  ;;                                  [ring-zombie "1.0.1"]]}})
-
