@@ -1,0 +1,49 @@
+= Roadmap: migae memcache
+
+GAE memcache is basically a map.  The Java API uses `put` and `get`;
+migae eschews `put` as conceptually incompatible with the
+constructivist orientation of Clojure.  Instead we treat the cache as
+a map and use standard map operations: instead of `put`, we use into,
+assoc, etc.  We support `get` since Clojure does, and we also support
+associative ops, so we can write, e.g. `(:foo mc/cache)` and
+`(mc/cache :foo)`.
+
+Implement:
+
+* IPersistentCacheMap
+* mc/cache-map stuff
+* into and friends:  `(into (mc/cache-map) {:foo 123})`
+* etc.
+
+= design questions
+
+* how to naturally support both sync and async memcache services?  The
+  asyn service uses Future so it needs to be integrated with Clojure's
+  handling of such stuff.
+
+= api
+
+```
+void clearAll()		mc/Cache reinit
+boolean contains?(keyO  (contains? mc/Cache theKey)
+
+boolean delete(...)	(dissoc mc/Cache theKey)
+keys deleteAll(keys)	(dissoc mc/Cache theKey & theKeys)
+
+obj 	get(theKey)	(mc/Cache theKey) or (theKey mc/Cache) or (get mc/Cache theKey)
+map<T, obj> getAll(keys)(mc/Cache theKeys)
+
+IdentifiableValue getIdentifiable(key)
+
+stats getStatistics
+
+Long increment(key, delta)
+map<T, long) incrementAll(keys, delta)
+
+    add:  decrement
+
+void put(key, val)   (assoc mc/Cache key val), (into mc/Cache {key val}), etc
+void putAll
+
+set<T> putIfUntouched
+```
