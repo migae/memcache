@@ -6,7 +6,11 @@ link:doc/Roadmap.adoc[Roadmap]
 
 == Use
 
+gradle:
 
+```
+    compile "org.mobileink:migae.memcache:0.1.0-SNAPSHOT"
+```
 
 == API
 
